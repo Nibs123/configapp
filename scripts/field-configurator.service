@@ -1,0 +1,16 @@
+[Unit]
+Description=Offline Field Configurator Launcher
+After=systemd-user-sessions.service network.target
+
+[Service]
+Type=simple
+User=%i
+Group=%i
+WorkingDirectory=%h/configapp
+Environment=HOME=%h
+ExecStart=%h/configapp/scripts/start_kiosk.sh
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

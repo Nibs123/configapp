@@ -1,0 +1,26 @@
+ui:
+  title: "Field Configurator"
+  fullscreen: true
+
+kiosk:
+  chromium_binary: "/usr/bin/chromium-browser"
+  common_flags:
+    - "--kiosk"
+    - "--no-first-run"
+    - "--no-default-browser-check"
+    - "--disable-pinch"
+    - "--overscroll-history-navigation=0"
+    - "--enable-experimental-web-platform-features"
+
+tools:
+  - name: "Betaflight"
+    command: ["/bin/bash", "-lc", "${REPO_ROOT}/scripts/launch_betaflight.sh"]
+  - name: "iNav"
+    command: ["/bin/bash", "-lc", "${REPO_ROOT}/scripts/launch_inav.sh"]
+  - name: "AM32"
+    command: ["/bin/bash", "-lc", "${REPO_ROOT}/scripts/launch_am32.sh"]
+
+firmware:
+  default_stack: "betaflight"
+  default_target: "imported"
+  default_version: "manual"
